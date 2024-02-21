@@ -1,1 +1,3 @@
-export default 'Hello father 4!';
+import Holiday from './holiday/holiday';
+
+export default Holiday;
