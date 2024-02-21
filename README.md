@@ -6,7 +6,7 @@
 ## Install
 
 ```bash
-$ npm install
+$ npm i @chnlib/chinese-holiday
 ```
 
 ```bash
