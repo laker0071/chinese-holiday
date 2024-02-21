@@ -83,6 +83,9 @@ function findHolidays(
   let matchedHolidays: IHoliday[] = [];
   const fmtStartDate = dayjs(start).format("YYYY-MM-DD");
   const fmtEndDate = dayjs(end).format("YYYY-MM-DD");
+
+  if(dayjs(fmtStartDate).isAfter(dayjs(fmtEndDate))) return console.error('startTime must before endTime') // 开始时间必须比结束时间早
+
   if (end) {
     for (let i = 0; i < ALL_HOLIDAYS.length; i++) {
       if (
