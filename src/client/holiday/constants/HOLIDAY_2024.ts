@@ -1,4 +1,4 @@
-import { HOLIDAYS_TYPE, IAddtionalWorkday, IHoliday } from "./type";
+import { HOLIDAYS_TYPE, IAddtionalWorkday, IHoliday } from "../type";
 
 export const HOLIDAY_2024: IHoliday[] = [
   // 元旦

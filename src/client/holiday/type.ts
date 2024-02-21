@@ -1,4 +1,3 @@
-
 export const HOLIDAYS_TYPE = {
   NEW_YEARS_DAY: { en: "New Year's Day", cn: "元旦" },
   SPRING_FESTIVAL: { en: "Spring Festival", cn: "春节" },
@@ -7,16 +6,20 @@ export const HOLIDAYS_TYPE = {
   DRAGON_BOAT_FESTIVAL: { en: "Dragon Boat Festival", cn: "端午节" },
   MID_AUTUMN_FESTIVAL: { en: "Mid-autumn Festival", cn: "中秋" },
   NATIONAL_DAY: { en: "National Day", cn: "国庆节" },
+  VICTORY_MEMORIAL_DAY: {
+    en: "Victory Memorial Day",
+    cn: "抗日战争胜利纪念日",
+  },
 };
 
-export interface IHoliday  {
+export interface IHoliday {
   date: string;
   [key: string]: any;
-};
+}
 
-export interface IAddtionalWorkday  {
+export interface IAddtionalWorkday {
   date: string;
-};
+}
 
 export interface IWorkday {
   date: string;
