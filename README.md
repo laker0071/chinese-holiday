@@ -19,12 +19,13 @@ ChineseHoliday.isWorkday("2024-02-04"); // true，调休
 ChineseHoliday.isWorkday("2024-02-09"); // true,工作日
 ChineseHoliday.isWorkday("2024-02-10"); // false,春节
 
-ChineseHoliday.isHoliday("2024-02-03"); // false，非假期
-ChineseHoliday.isHoliday("2024-02-04"); // false，非假期
+ChineseHoliday.isHoliday("2024-02-03"); // false，非节假日
+ChineseHoliday.isHoliday("2024-02-04"); // false，调休
 ChineseHoliday.isHoliday("2024-02-09"); // false,工作日
 ChineseHoliday.isHoliday("2024-02-10"); // true,春节
 
 ChineseHoliday.findHolidays("2020-01-01", "2021-01-01"); // 返回开始时间和结束时间范围内的所有节假日
+ChineseHoliday.findHolidays("2021-01-01", "2020-01-01"); // error,开始时间必须比结束时间早
 ```
 
 ## LICENSE
