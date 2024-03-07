@@ -34,12 +34,18 @@ ChineseHoliday.findHolidays("2020-01-01", "2021-01-01"); // 返回开始时间�
 ChineseHoliday.findHolidays("2021-01-01", "2020-01-01"); // error,开始时间必须比结束时间早
 ```
 
-Node
+Node Require
 ``` js
-let ChineseHoliday = require('@chnlib/chinese-holiday')
+let ChineseHoliday = require('@chnlib/chinese-holiday').default
 
-console.log(ChineseHoliday.default.isHoliday('2023-01-01'))
+ChineseHoliday.isHoliday('2023-01-01')
+```
 
+Node Nestjs
+``` ts
+import ChineseHoliday from '@chnlib/chinese-holiday';
+
+ChineseHoliday.isHoliday('2023-01-01')
 ```
 
 ## LICENSE

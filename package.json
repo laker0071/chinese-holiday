@@ -1,6 +1,6 @@
 {
   "name": "@chnlib/chinese-holiday",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "中国节假日",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -15,6 +15,7 @@
     "holiday",
     "工作日",
     "节假日",
+    "nodejs",
     "2001",
     "2002",
     "2003",
