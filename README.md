@@ -9,10 +9,16 @@
 $ npm i @chnlib/chinese-holiday
 ```
 
+## Desc
+ ### 支持 ESM 和 CommonJS 语法
+    支持 Vue、React、Angular等多种框架
+    支持 Nodejs，Nest、Koa 框架
+
 ## Usage
 
 ```js
 import ChineseHoliday from "@chnlib/chinese-holiday";
+
 
 ChineseHoliday.isWorkday("2024-02-03"); // false，周六
 ChineseHoliday.isWorkday("2024-02-04"); // true，调休
@@ -26,6 +32,20 @@ ChineseHoliday.isHoliday("2024-02-10"); // true,春节
 
 ChineseHoliday.findHolidays("2020-01-01", "2021-01-01"); // 返回开始时间和结束时间范围内的所有节假日
 ChineseHoliday.findHolidays("2021-01-01", "2020-01-01"); // error,开始时间必须比结束时间早
+```
+
+Node Require
+``` js
+let ChineseHoliday = require('@chnlib/chinese-holiday').default
+
+ChineseHoliday.isHoliday('2023-01-01')
+```
+
+Node Nestjs
+``` ts
+import ChineseHoliday from '@chnlib/chinese-holiday';
+
+ChineseHoliday.isHoliday('2023-01-01')
 ```
 
 ## LICENSE
