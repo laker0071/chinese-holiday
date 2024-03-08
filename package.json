@@ -8,7 +8,8 @@
     "dev": "father dev",
     "build": "father build",
     "build:deps": "father prebundle",
-    "prepublishOnly": "father doctor && npm run build"
+    "prepublishOnly": "father doctor && npm run build",
+    "test": "jest"
   },
   "keywords": [
     "chinese-holiday",
@@ -55,7 +56,12 @@
     "access": "public"
   },
   "devDependencies": {
-    "father": "^4.4.0"
+    "father": "^4.4.0",
+    "jest": "^27",
+    "@types/jest": "^27",
+    "typescript": "^4",
+    "ts-node": "^10",
+    "@umijs/test": "^4"
   },
   "dependencies": {
     "dayjs": "^1.11.10"
