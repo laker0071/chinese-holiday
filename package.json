@@ -8,8 +8,7 @@
     "dev": "father dev",
     "build": "father build",
     "build:deps": "father prebundle",
-    "prepublishOnly": "father doctor && npm run build",
-    "test": "jest"
+    "prepublishOnly": "father doctor && npm run build"
   },
   "keywords": [
     "chinese-holiday",
@@ -56,16 +55,9 @@
     "access": "public"
   },
   "devDependencies": {
-    "@types/jest": "^27",
-    "@types/pouchdb": "^6.4.2",
-    "@umijs/test": "^4",
-    "father": "^4.4.0",
-    "jest": "^27",
-    "ts-node": "^10",
-    "typescript": "^4"
+    "father": "^4.4.1"
   },
   "dependencies": {
-    "dayjs": "^1.11.10",
-    "pouchdb": "^8.0.1"
+    "dayjs": "^1.11.11"
   }
 }

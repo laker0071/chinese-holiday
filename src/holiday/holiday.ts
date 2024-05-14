@@ -27,7 +27,6 @@ import { ADDTIONALWORKDAY_2022, HOLIDAY_2022 } from "./constants/HOLIDAY_2022";
 import { ADDTIONALWORKDAY_2023, HOLIDAY_2023 } from "./constants/HOLIDAY_2023";
 import { ADDTIONALWORKDAY_2024, HOLIDAY_2024 } from "./constants/HOLIDAY_2024";
 import { IHoliday, IWorkday } from "./type";
-import { SingletonPouchDB } from "./pouchdb";
 
 dayjs.extend(isBetween);
 dayjs.extend(isSameOrAfter);
@@ -88,21 +87,6 @@ const ALL_ADDTIONALWORKDAYS = [
   ...ADDTIONALWORKDAY_2001,
 ];
 
-// 初始化 pouchdb
-let db = SingletonPouchDB.getInstance()
-
-db.post({
-  all_holidays: ALL_HOLIDAYS,
-  all_addtionalworkdays: ALL_ADDTIONALWORKDAYS,
-}).then(function (response) {
-  console.log(response)
-  db.get(response.id).then(response => {
-    console.log(response)
-  })
-}).catch(function (err) {
-  console.log(err);
-});
-
 /**
  * 判断是否为节假日
  * @param value 日期
@@ -134,7 +118,7 @@ function isWorkday(value: string | number | Dayjs) {
   const fmtDateDay = dayjs(value).day(); // 获取传入的日期是周几
 
   // 如果日期是周六周日，判断是否在调休日中，如果是周一至周五，判断是否节假日
-  if (fmtDateDay === 6 || fmtDateDay === 7) {
+  if (fmtDateDay === 6 || fmtDateDay === 0) {
     for (let i = 0; i < ALL_ADDTIONALWORKDAYS.length; i++) {
       if (ALL_ADDTIONALWORKDAYS[i].date === fmtDate) {
         matchedWorkday.push(ALL_ADDTIONALWORKDAYS[i]);
@@ -160,7 +144,7 @@ function findHolidays(
   const fmtStartDate = dayjs(start).format("YYYY-MM-DD");
   const fmtEndDate = dayjs(end).format("YYYY-MM-DD");
 
-  if (dayjs(fmtStartDate).isAfter(dayjs(fmtEndDate))) return console.error('startTime must before endTime') // 开始时间必须比结束时间早
+  if(dayjs(fmtStartDate).isAfter(dayjs(fmtEndDate))) return console.error('startTime must before endTime') // 开始时间必须比结束时间早
 
   if (end) {
     for (let i = 0; i < ALL_HOLIDAYS.length; i++) {
