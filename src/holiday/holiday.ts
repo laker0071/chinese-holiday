@@ -118,7 +118,7 @@ function isWorkday(value: string | number | Dayjs) {
   const fmtDateDay = dayjs(value).day(); // 获取传入的日期是周几
 
   // 如果日期是周六周日，判断是否在调休日中，如果是周一至周五，判断是否节假日
-  if (fmtDateDay === 6 || fmtDateDay === 7) {
+  if (fmtDateDay === 6 || fmtDateDay === 0) {
     for (let i = 0; i < ALL_ADDTIONALWORKDAYS.length; i++) {
       if (ALL_ADDTIONALWORKDAYS[i].date === fmtDate) {
         matchedWorkday.push(ALL_ADDTIONALWORKDAYS[i]);
