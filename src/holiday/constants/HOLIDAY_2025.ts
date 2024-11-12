@@ -1,0 +1,46 @@
+import { HOLIDAYS_TYPE, IAddtionalWorkday, IHoliday } from "../type";
+
+export const HOLIDAY_2025: IHoliday[] = [
+  // 元旦
+  { date: "2025-01-01", ...HOLIDAYS_TYPE.NEW_YEARS_DAY },
+  // 春节
+  { date: "2025-01-28", ...HOLIDAYS_TYPE.SPRING_FESTIVAL },
+  { date: "2025-01-29", ...HOLIDAYS_TYPE.SPRING_FESTIVAL },
+  { date: "2025-01-30", ...HOLIDAYS_TYPE.SPRING_FESTIVAL },
+  { date: "2025-01-31", ...HOLIDAYS_TYPE.SPRING_FESTIVAL },
+  { date: "2025-02-01", ...HOLIDAYS_TYPE.SPRING_FESTIVAL },
+  { date: "2025-02-02", ...HOLIDAYS_TYPE.SPRING_FESTIVAL },
+  { date: "2025-02-03", ...HOLIDAYS_TYPE.SPRING_FESTIVAL },
+  { date: "2025-02-04", ...HOLIDAYS_TYPE.SPRING_FESTIVAL },
+  // 清明
+  { date: "2025-04-04", ...HOLIDAYS_TYPE.TOMB_SWEEPING_DAY },
+  { date: "2025-04-05", ...HOLIDAYS_TYPE.TOMB_SWEEPING_DAY },
+  { date: "2025-04-06", ...HOLIDAYS_TYPE.TOMB_SWEEPING_DAY },
+  // 劳动节
+  { date: "2025-05-01", ...HOLIDAYS_TYPE.LABOUR_DAY },
+  { date: "2025-05-02", ...HOLIDAYS_TYPE.LABOUR_DAY },
+  { date: "2025-05-03", ...HOLIDAYS_TYPE.LABOUR_DAY },
+  { date: "2025-05-04", ...HOLIDAYS_TYPE.LABOUR_DAY },
+  { date: "2025-05-05", ...HOLIDAYS_TYPE.LABOUR_DAY },
+  // 端午节
+  { date: "2025-05-31", ...HOLIDAYS_TYPE.DRAGON_BOAT_FESTIVAL },
+  { date: "2025-06-01", ...HOLIDAYS_TYPE.DRAGON_BOAT_FESTIVAL },
+  { date: "2025-06-02", ...HOLIDAYS_TYPE.DRAGON_BOAT_FESTIVAL },
+  // 国庆节、中秋节
+  { date: "2025-10-01", ...HOLIDAYS_TYPE.NATIONAL_DAY },
+  { date: "2025-10-02", ...HOLIDAYS_TYPE.NATIONAL_DAY },
+  { date: "2025-10-03", ...HOLIDAYS_TYPE.NATIONAL_DAY },
+  { date: "2025-10-04", ...HOLIDAYS_TYPE.NATIONAL_DAY },
+  { date: "2025-10-05", ...HOLIDAYS_TYPE.NATIONAL_DAY },
+  { date: "2025-10-06", ...HOLIDAYS_TYPE.NATIONAL_DAY },
+  { date: "2025-10-07", ...HOLIDAYS_TYPE.NATIONAL_DAY },
+  { date: "2025-10-08", ...HOLIDAYS_TYPE.NATIONAL_DAY },
+];
+
+export const ADDTIONALWORKDAY_2025: IAddtionalWorkday[] = [
+  { date: "2025-01-26" },
+  { date: "2025-02-08" },
+  { date: "2025-04-27" },
+  { date: "2025-09-28" },
+  { date: "2025-10-11" },
+];

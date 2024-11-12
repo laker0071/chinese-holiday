@@ -26,12 +26,14 @@ import { ADDTIONALWORKDAY_2021, HOLIDAY_2021 } from "./constants/HOLIDAY_2021";
 import { ADDTIONALWORKDAY_2022, HOLIDAY_2022 } from "./constants/HOLIDAY_2022";
 import { ADDTIONALWORKDAY_2023, HOLIDAY_2023 } from "./constants/HOLIDAY_2023";
 import { ADDTIONALWORKDAY_2024, HOLIDAY_2024 } from "./constants/HOLIDAY_2024";
+import { ADDTIONALWORKDAY_2025, HOLIDAY_2025 } from "./constants/HOLIDAY_2025";
 import { IHoliday, IWorkday } from "./type";
 
 dayjs.extend(isBetween);
 dayjs.extend(isSameOrAfter);
 
 const ALL_HOLIDAYS = [
+  ...HOLIDAY_2025,
   ...HOLIDAY_2024,
   ...HOLIDAY_2023,
   ...HOLIDAY_2022,
@@ -57,10 +59,11 @@ const ALL_HOLIDAYS = [
   ...HOLIDAY_2003,
   ...HOLIDAY_2002,
   ...HOLIDAY_2001,
-  ...HOLIDAY_2000
+  ...HOLIDAY_2000,
 ];
 
 const ALL_ADDTIONALWORKDAYS = [
+  ...ADDTIONALWORKDAY_2025,
   ...ADDTIONALWORKDAY_2024,
   ...ADDTIONALWORKDAY_2023,
   ...ADDTIONALWORKDAY_2022,
@@ -110,7 +113,7 @@ function isHoliday(value: string | number | Dayjs) {
 /**
  * 判断是否为工作日
  * @param value 日期
- * @returns 
+ * @returns
  */
 function isWorkday(value: string | number | Dayjs) {
   let matchedWorkday: IWorkday[] = [];
@@ -144,7 +147,8 @@ function findHolidays(
   const fmtStartDate = dayjs(start).format("YYYY-MM-DD");
   const fmtEndDate = dayjs(end).format("YYYY-MM-DD");
 
-  if(dayjs(fmtStartDate).isAfter(dayjs(fmtEndDate))) return console.error('startTime must before endTime') // 开始时间必须比结束时间早
+  if (dayjs(fmtStartDate).isAfter(dayjs(fmtEndDate)))
+    return console.error("startTime must before endTime"); // 开始时间必须比结束时间早
 
   if (end) {
     for (let i = 0; i < ALL_HOLIDAYS.length; i++) {
